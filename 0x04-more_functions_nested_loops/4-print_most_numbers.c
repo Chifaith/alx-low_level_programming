@@ -1,28 +1,27 @@
 #include "main.h"
 
 /**
- * more_numbers - prints more numbers
+ * print_most_numbers - Prints numbers 0 to 9 except 2 and 4.
+ * Takes no argument values.
+ * Return: No specified return value.
  */
-
-void more_numbers(void)
+void print_most_numbers(void)
 {
-	int i, j;
+	int most_num = 48;
 
-	i = 0;
-
-	while (i < 10)
+	while (most_num <= 57)
 	{
-		for (j = 0; j < 15; j++)
+
+		if (most_num == 50 || most_num == 52)
 		{
-			if (j >= 10)
-			{
-				_putchar((j / 10) + 48);
-			}
-			_putchar((j % 10) + 48);
+			most_num++;
+			continue;
 		}
-
-		_putchar('\n');
-
-		i++;
+		else
+		{
+			_putchar(most_num);
+			most_num++;
+		}
 	}
+	_putchar(10);
 }
