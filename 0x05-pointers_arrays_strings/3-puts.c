@@ -1,15 +1,18 @@
+#include "main.h"
 #include <stdio.h>
-/**
- * main - entry point
- *
- * Return: alway returns 0
- */
-int main(void)
-{
-	int a = 0;
 
-	for (; a < 10 ; a++)
-		printf("%d", a);
-	putchar('\n');
-	return (0);
+/**
+ * _puts - puts a string
+ *
+ * @str: string to print
+ */
+void _puts(char *str)
+{
+	int i;
+
+	for (i = 0; *(str + i) != '\0'; i++)
+	{
+		_putchar(*(str + i));
+	}
+	_putchar('\n');
 }
