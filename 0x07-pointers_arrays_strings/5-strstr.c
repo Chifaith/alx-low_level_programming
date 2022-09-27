@@ -7,8 +7,8 @@
  *
  * Return: Pointer to the beginning of the located substring, or NULL absent
  */
-char *_strstr(char *haystack, char *needle){
-	{
+char *_strstr(char *haystack, char *needle)
+{
 		int i, j, k;
 
 		for (i = 0; haystack[i]; i++)
@@ -30,4 +30,4 @@ char *_strstr(char *haystack, char *needle){
 			}
 		}
 		return (NULL);
-	}
+}
