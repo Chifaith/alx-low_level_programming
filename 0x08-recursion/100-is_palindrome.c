@@ -48,7 +48,7 @@ int check_match(char *big, char *end)
 int get_len(char *s)
 {
 	int i = 0, len = 0;
-	
+
 	if (s[i])
 	{
 		len += get_len(&s[++i]);
