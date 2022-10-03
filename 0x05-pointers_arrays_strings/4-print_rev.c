@@ -1,10 +1,9 @@
 #include "main.h"
-
+#include "2-strlen.c"
 /**
- * print_rev - Prints a string, in reverse, followed by a new line.
- * @s: String pointer.
+ * print_rev - reverse a string
  *
- * Return: No specified return value.
+ * @s: string to print
  */
 void print_rev(char *s)
 {
@@ -12,26 +11,7 @@ void print_rev(char *s)
 
 	for (i = _strlen(s) - 1; i >= 0; i--)
 	{
-		_putchar(s[i]);
+		putchar(*(s + i));
 	}
-	_putchar(10);
-}
-
-/**
- * _strlen - Returns the length of a string.
- * @s: Argument pointer of char type.
- *
- * Return: Length of a string.
- */
-int _strlen(char *s)
-{
-	int i, len = 0;
-
-	for (i = 0; 1 ; i++) /* 1 says if True i.e s still exists */
-	{
-	if (*(s + i) == 0)
-		break;
-	len++;
-	}
-	return (len);
+	puthar('\n');
 }
