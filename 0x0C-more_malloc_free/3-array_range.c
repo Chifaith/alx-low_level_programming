@@ -1,48 +1,28 @@
 #include "main.h"
 
 /**
- * _realloc - Reallocates a memory block using malloc() and free().
- * @ptr: Pointer to previously allocated memory.
- * @old_size: Size in bytes of the old allocated space.
- * @new_size: Size in bytes of the new memory block.
+ * array_range - Creates an array of integers.
+ * @min: Lowest number in the array.
+ * @max: Highest number in the array.
  *
- * Return: Pointer to new memory block. NULL if new_size is 0 and ptr is NULL.
+ * Return: Pointer to the array. NULL if min > max, or malloc fails.
  */
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+int *array_range(int min, int max)
 {
-	unsigned int i;
-	char *mptr;
-	char *old = ptr;
+	int i, len;
+	int *mptr;
 
-	if (new_size == old_size)
-		return (old);
-
-	if (old && new_size == 0)
-	{
-		free(old);
+	if (min > max)
 		return (NULL);
-	}
-	else if (old == NULL)
-	{
-		mptr = malloc(new_size);
-		return (mptr);
-	}
 
-	mptr = malloc(new_size);
+	len = max - min + 1;
+
+	mptr = malloc(sizeof(int) * len);
 	if (mptr == NULL)
 		return (NULL);
 
-	if (new_size > old_size)
-	{
-		for (i = 0; i < old_size; i++)
-			mptr[i] = old[i];
-	}
-	else if (old_size > new_size)
-	{
-		for (i = 0; i < new_size; i++)
-			mptr[i] = old[i];
-	}
+	for (i = 0; i < len; i++)
+		mptr[i] = min++;
 
-	free(old);
 	return (mptr);
 }
