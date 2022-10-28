@@ -2,7 +2,7 @@
 
 /**
  * print_listint - A function that prints out the all elements of listint.
- * @h: Head pointer to listint.
+ * @h: Head pointer to listint
  *
  * Return: The number of nodes in the list.
  */
